@@ -15,14 +15,50 @@ def generate_recipe_card(recipe_path, images_path):
         </a>'''
 
 def generate_category_section(category, emoji):
-    return f'''
-    <section class="category-section">
-      <h2>{emoji} {category.title()}</h2>
-      <div class="recipe-grid">
-        {generate_category_cards(category)}
-      </div>
-    </section>
-    '''
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{category.title()} Recipes | Wolfgang's Cookbook</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../pizza/index.html">Pizza</a></li>
+        <li><a href="../eats/index.html" class="active">Eats</a></li>
+        <li><a href="../treats/index.html">Treats</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="recipe-header">
+    <h1>{category.title()} Recipes</h1>
+    <p class="subtitle">{get_category_subtitle(category)}</p>
+  </section>
+
+  <main>
+    <div class="recipe-grid">
+      {generate_category_cards(category)}
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
+  </footer>
+</body>
+</html>'''
 
 def generate_category_cards(category):
     recipes_path = f"recipes/{category}"
