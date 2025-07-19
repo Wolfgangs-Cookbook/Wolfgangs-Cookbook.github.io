@@ -7,10 +7,18 @@ on:
 
 permissions:
   contents: write
+  pages: write
+
+concurrency: 
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -31,3 +39,6 @@ jobs:
           git add recipes/*/index.html recipes/index.html
           git commit -m "Auto-generate recipe indexes" || exit 0
           git push
+
+      - name: Wait for Pages Build
+        run: sleep 30
