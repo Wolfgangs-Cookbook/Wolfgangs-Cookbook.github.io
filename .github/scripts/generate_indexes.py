@@ -47,13 +47,65 @@ def generate_homepage_cards():
         category = Path(recipe).parent.name
         filename = Path(recipe).stem
         title = filename.replace('-', ' ').title()
+        # Fix paths to be relative to root directory
         cards.append(f'''
-        <a href="recipes/{category}/{filename}.html" class="recipe-card">
+        <a href="{recipe}" class="recipe-card">
             <img src="images/{category}/{filename}.png" alt="{title}">
             <h2>{title}</h2>
         </a>''')
     
     return '\n'.join(cards)
+
+def generate_homepage():
+    template = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wolfgang's Cookbook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="index.html">
+        <img src="logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="recipes/index.html">Recipe Index</a></li>
+        <li><a href="recipes/pizza/index.html">Pizza</a></li>
+        <li><a href="recipes/eats/index.html">Eats</a></li>
+        <li><a href="recipes/treats/index.html">Treats</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>Welcome to Wolfgang's Cookbook — a collection of full-flavor recipes rooted in tradition and aspiring to be as healthy as possible. I'm always open to suggestions and tips, so if you find any, email them to ofstedal.wolfgang@gmail.com while we work on implementing a comment function.</p>
+    </section>
+
+    <section class="featured-recipes">
+      <h2>Latest Recipes</h2>
+      <div class="recipe-grid">
+        {content}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
+  </footer>
+</body>
+</html>'''
+    
+    content = generate_homepage_cards()
+    return template.format(content=content)
 
 # Main execution
 if __name__ == "__main__":
@@ -64,6 +116,5 @@ if __name__ == "__main__":
             f.write(content)
     
     # Generate homepage
-    homepage_content = generate_homepage_cards()
     with open('index.html', 'w') as f:
-        f.write(homepage_content)
+        f.write(generate_homepage())
