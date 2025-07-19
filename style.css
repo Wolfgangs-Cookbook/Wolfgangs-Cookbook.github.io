@@ -11,7 +11,7 @@ body {
 /* Layout */
 main {
   max-width: 900px;
-  margin: 2.5em auto;
+  margin: 1em auto;  /* Reduced from 2.5em to 1em to decrease top gap */
   padding: 0 1.2em;
 }
 
@@ -126,6 +126,7 @@ nav a:focus {
   align-items: flex-start;
   max-width: 1000px;
   padding: 0 1em;
+  margin-bottom: 3em;  /* Added to create space below recipe content */
 }
 
 .recipe-text {
