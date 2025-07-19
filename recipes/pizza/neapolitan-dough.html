@@ -7,91 +7,90 @@
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
- <header>
-  <div class="hero">
-    <a href="../../index.html">
-      <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
-    </a>
-    <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+  <header>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../baking/index.html">Baking</a></li>
+        <li><a href="../pizza/index.html">Pizza</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="recipe-header">
+    <h1>Low-Salt Neapolitan Dough</h1>
+    <p class="subtitle">12–72hr Refrigerated Bulk-Ferment</p>
+  </section>
+
+  <div class="recipe-content">
+    <div class="recipe-text">
+      <main>
+        <article>
+          <h2>Ingredients</h2>
+          <ul>
+            <li>500g 00 flour (or bread flour)</li>
+            <li>325g water (65%)</li>
+            <li>2g instant yeast</li>
+            <li>7g salt</li>
+          </ul>
+
+          <h2>Instructions</h2>
+          <ol>
+            <li>Mix all ingredients in a bowl. Let rest 20 minutes (autolyse).</li>
+            <li>Knead gently for 5–8 minutes until smooth. Cover and let rise at room temp for 2–3 hours.</li>
+            <li>Divide into 2–4 dough balls. Place in lightly oiled containers.</li>
+            <li>Cold ferment in the fridge for 24–48 hours.</li>
+            <li>Let dough warm to room temp for 1–2 hours before stretching.</li>
+            <li>Bake at 500–550°F on a pizza steel or stone until bubbly and charred (6–8 minutes).</li>
+          </ol>
+
+          <h2>Tips</h2>
+          <ul>
+            <li>Use the dough within 72 hours max.</li>
+            <li>For more tang, extend the cold ferment to 72 hours (reduce yeast slightly).</li>
+          </ul>
+        </article>
+
+        <section class="interactions">
+          <form action="../../likes.php" method="POST">
+            <input type="hidden" name="page" value="neapolitan-dough" />
+            <button type="submit">👍 Like</button>
+          </form>
+
+          <div class="comments">
+            <h3>Leave a Comment</h3>
+            <form action="../../comments.php" method="POST">
+              <input type="hidden" name="page" value="neapolitan-dough" />
+              <label for="name">Name:</label><br />
+              <input type="text" id="name" name="name" /><br />
+              <label for="comment">Comment:</label><br />
+              <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
+              <input type="submit" value="Post Comment" />
+            </form>
+
+            <div class="existing-comments">
+              <?php
+                $file = '../../comments/neapolitan-dough.txt';
+                if (file_exists($file)) {
+                  echo nl2br(htmlspecialchars(file_get_contents($file)));
+                }
+              ?>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <img src="../../images/pizza/neapolitan-dough.png" alt="Neapolitan Dough" class="recipe-photo" />
   </div>
-  <nav>
-    <ul>
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="../index.html">Recipe Index</a></li>
-      <li><a href="../baking/index.html">Baking</a></li>
-      <li><a href="../pizza/index.html">Pizza</a></li>
-      <li><a href="../../about.html">About</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="recipe-header">
-  <h1>Low-Salt Neapolitan Dough</h1>
-  <p class="subtitle">12–72hr Refrigerated Bulk-Ferment</p>
-</section>
-
-<div class="recipe-content">
-  <div class="recipe-text">
-
-  <main>
-    <article>
-      <h2>Ingredients</h2>
-      <ul>
-        <li>500g 00 flour (or bread flour)</li>
-        <li>325g water (65%)</li>
-        <li>2g instant yeast</li>
-        <li>7g salt</li>
-      </ul>
-
-      <h2>Instructions</h2>
-      <ol>
-        <li>Mix all ingredients in a bowl. Let rest 20 minutes (autolyse).</li>
-        <li>Knead gently for 5–8 minutes until smooth. Cover and let rise at room temp for 2–3 hours.</li>
-        <li>Divide into 2–4 dough balls. Place in lightly oiled containers.</li>
-        <li>Cold ferment in the fridge for 24–48 hours.</li>
-        <li>Let dough warm to room temp for 1–2 hours before stretching.</li>
-        <li>Bake at 500–550°F on a pizza steel or stone until bubbly and charred (6–8 minutes).</li>
-      </ol>
-
-      <h2>Tips</h2>
-      <ul>
-        <li>Use the dough within 72 hours max.</li>
-        <li>For more tang, extend the cold ferment to 72 hours (reduce yeast slightly).</li>
-      </ul>
-    </article>
-
-    <section class="interactions">
-      <form action="../../likes.php" method="POST">
-        <input type="hidden" name="page" value="neapolitan-dough" />
-        <button type="submit">👍 Like</button>
-      </form>
-
-      <div class="comments">
-        <h3>Leave a Comment</h3>
-        <form action="../../comments.php" method="POST">
-          <input type="hidden" name="page" value="neapolitan-dough" />
-          <label for="name">Name:</label><br />
-          <input type="text" id="name" name="name" /><br />
-          <label for="comment">Comment:</label><br />
-          <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
-          <input type="submit" value="Post Comment" />
-        </form>
-
-        <div class="existing-comments">
-          <!-- PHP will insert existing comments here -->
-          <?php
-            $file = '../../comments/neapolitan-dough.txt';
-            if (file_exists($file)) {
-              echo nl2br(htmlspecialchars(file_get_contents($file)));
-            }
-          ?>
-        </div>
-      </div>
-    </section>
-  </main>
- </div>
-<img src="../../images/pizza/neapolitan-dough.png" alt="Neapolitan Dough" class="recipe-photo">
-</div>
 
   <footer>
     <p>&copy; 2025 Wolfgang's Cookbook</p>
