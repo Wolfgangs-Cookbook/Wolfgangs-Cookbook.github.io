@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wolfgang's Cookbook</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Wolfgang's Cookbook</h1>
-    <p class="tagline">Low-salt, high-flavor recipes made from scratch.</p>
+    <div class="hero">
+      <h1>Wolfgang's Cookbook</h1>
+      <p class="tagline">Low-salt, high-flavor recipes made from scratch.</p>
+    </div>
     <nav>
       <ul>
         <li><a href="recipes/index.html">All Recipes</a></li>
@@ -22,18 +24,26 @@
   </header>
 
   <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>Welcome to Wolfgang's Cookbook — a collection of low-sodium, full-flavor recipes rooted in tradition and made with heart. Explore by category or check out the full recipe library.</p>
+    <section class="intro">
+      <p>Welcome to Wolfgang's Cookbook — a home for low-sodium, full-flavor recipes rooted in tradition. Whether you're craving a slow-ferment Neapolitan pizza dough or a guilt-free cookie, you'll find it here — real food, made well.</p>
     </section>
 
-    <section>
+    <section class="featured">
       <h2>Featured Recipes</h2>
-      <ul class="featured-recipes">
-        <li><a href="recipes/pizza/margherita.html">Classic Margherita Pizza</a></li>
-        <li><a href="recipes/pasta/cacio-e-pepe.html">Cacio e Pepe</a></li>
-        <li><a href="recipes/baking/olive-oil-cake.html">Olive Oil Cake</a></li>
-      </ul>
+      <div class="recipe-grid">
+        <article class="recipe-card">
+          <a href="recipes/pizza/neapolitan-dough.html">
+            <img src="images/pizza-dough.jpg" alt="Neapolitan Pizza Dough" />
+            <h3>Neapolitan Pizza Dough (24-48hr)</h3>
+          </a>
+        </article>
+        <article class="recipe-card">
+          <a href="recipes/baking/oatmeal-chocolate-chip.html">
+            <img src="images/oatmeal-cookie.jpg" alt="Oatmeal Chocolate Chip Cookies" />
+            <h3>Oatmeal Chocolate Chip Cookies</h3>
+          </a>
+        </article>
+      </div>
     </section>
   </main>
 
