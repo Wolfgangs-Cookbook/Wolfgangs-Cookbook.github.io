@@ -107,7 +107,7 @@ def generate_homepage():
     content = generate_homepage_cards()
     return template.format(content=content)
 
-# Main execution
+# Update main execution
 if __name__ == "__main__":
     # Generate category pages
     for category, emoji in {'pizza': '🍕', 'eats': '🍲', 'treats': '🍪'}.items():
