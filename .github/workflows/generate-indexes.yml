@@ -30,7 +30,10 @@ jobs:
           python-version: '3.x'
           
       - name: Generate Indexes
-        run: python .github/scripts/generate_indexes.py
+        run: |
+          python -u .github/scripts/generate_indexes.py
+          echo "Generated HTML content:"
+          cat index.html
         
       - name: Commit changes
         run: |

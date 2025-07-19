@@ -80,30 +80,41 @@ def generate_category_cards(category):
     return '\n'.join(generate_recipe_card(recipe, category) for recipe in recipes)
 
 def generate_homepage_cards():
-    # Get all recipe files except index.html
+    print("Starting homepage card generation...")
+    
     recipes = []
     for category in ['pizza', 'eats', 'treats']:
         recipe_files = glob.glob(f"recipes/{category}/*.html")
+        print(f"Found {len(recipe_files)} files in {category}/")
         recipes.extend([f for f in recipe_files if 'index.html' not in f])
+    
+    print(f"Total recipes found: {len(recipes)}")
     
     # Sort by modification time, newest first
     recipes.sort(key=lambda x: os.path.getmtime(x), reverse=True)
-    
-    # Take up to 9 most recent recipes
     recent_recipes = recipes[:9]
+    
+    print(f"Processing {len(recent_recipes)} recent recipes:")
+    for r in recent_recipes:
+        print(f"  - {r}")
     
     cards = []
     for recipe in recent_recipes:
         category = Path(recipe).parent.name
         filename = Path(recipe).stem
         title = filename.replace('-', ' ').title()
-        cards.append(f'''
+        print(f"Creating card for {title} from {category}")
+        
+        card = f'''
         <a href="recipes/{category}/{filename}.html" class="recipe-card">
-          <img src="images/{category}/{filename}.png" alt="{title}">
-          <h2>{title}</h2>
-        </a>''')
+            <img src="images/{category}/{filename}.png" alt="{title}">
+            <h2>{title}</h2>
+        </a>'''
+        cards.append(card)
     
-    return '\n'.join(cards)
+    final_html = '\n'.join(cards)
+    print(f"Generated {len(cards)} cards")
+    return final_html
 
 def generate_homepage():
     homepage_template = '''<!DOCTYPE html>
