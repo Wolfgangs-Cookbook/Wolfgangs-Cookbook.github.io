@@ -28,6 +28,7 @@ def generate_category_section(category, emoji):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{category.title()} | Wolfgang's Cookbook</title>
   <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
   <header>
