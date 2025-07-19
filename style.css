@@ -75,7 +75,7 @@ main {
   background-color: #fff;
 }
 
-/* Recipe Title Format
+/* Recipe Title Format */
 .recipe-header h1 {
   font-size: 2.2em;
   font-weight: 500;
@@ -83,15 +83,15 @@ main {
   color: #333;
 }
 
-/* Recipe Subtitle Format
+/* Recipe Subtitle Format */
 .recipe-header .subtitle {
   font-size: 1.2em;
   color: #777;
   margin: 0.3em 0 0.5em;
 }
 
-/* Wrapper that separates recipe content from photo, so they can be aligned side-by-side
-/* Recipe Content Format
+/* Wrapper that separates recipe content from photo, so they can be aligned side-by-side */
+/* Recipe Content Format */
 .recipe-content {
   display: flex;
   gap: 2em;
@@ -104,7 +104,7 @@ main {
   flex: 1;
 }
 
-/* Recipe Photo Format
+/* Recipe Photo Format */
 .recipe-photo {
   flex-shrink: 0;
   width: 250px;
