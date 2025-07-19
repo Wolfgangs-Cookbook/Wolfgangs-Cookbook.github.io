@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Low-Salt Biga Neapolitan Dough</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="recipes/pizza/index.html">Pizza</a></li>
+        <li><a href="recipes/eats/index.html">Eats</a></li>
+        <li><a href="recipes/treats/index.html">Treats</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <section class="recipe-header">
+    <h1>Low-Salt Biga Neapolitan Dough</h1>
+    <p class="subtitle">Classic 65% Hydration with an Overnight Biga Preferment</p>
+  </section>
+
+  <div class="recipe-content">
+    <div class="recipe-text">
+      <article>
+        <h2>Ingredients (3 pizzas)</h2>
+        <ul>
+          <li>500g 00 flour (50% Caputo Pizzeria, 50% Caputo Chef's)</li>
+          <li>325g water (65% hydration total)</li>
+          <li>0.3g active dry yeast (for biga)</li>
+          <li>4g salt</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+          <li><strong>Make the Biga (the day before):</strong> Mix 330g flour, 165g water (room temp), and 0.3g yeast until just combined. Leave in a covered bowl or tub at 18–20°C (64–68°F) for 12–16 hours.</li>
+          <li><strong>Final Dough:</strong> Add the remaining 170g flour, 160g water, and 4g salt to the biga. Mix until combined and knead until smooth (hand or machine).</li>
+          <li>Rest covered at room temperature for 1 hour, then perform 2–3 stretch and folds, 20 minutes apart.</li>
+          <li>Transfer to the fridge for a cold bulk ferment for 24–72 hours.</li>
+          <li>Remove from fridge 4–6 hours before baking. Divide into 3 dough balls (~275g), shape, and rest at room temperature until airy and pliable.</li>
+          <li>Stretch gently into 10–11 inch rounds. Top and bake on a steel or stone at 500–550°F for 6–8 minutes or until puffy and charred.</li>
+        </ol>
+
+        <h2>Tips</h2>
+        <ul>
+          <li>The biga should look dry and webby when ready — resist adding more water at first.</li>
+          <li>Try 48–72 hours total ferment for better flavor and digestibility.</li>
+          <li>Salt is reduced in this dough to suit low-sodium diets; adjust sauce and toppings accordingly.</li>
+        </ul>
+      </article>
+    </div>
+    <img src="../../images/pizza/biga-dough.png" alt="Low-Salt Biga Dough" class="recipe-photo" />
+  </div>
+
+  <section class="interactions">
+    <form action="../../likes.php" method="POST">
+      <input type="hidden" name="page" value="low-salt-biga-neapolitan" />
+      <button type="submit">👍 Like</button>
+    </form>
+
+    <div class="comments">
+      <h3>Leave a Comment</h3>
+      <form action="../../comments.php" method="POST">
+        <input type="hidden" name="page" value="low-salt-biga-neapolitan" />
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="comment">Comment:</label><br />
+        <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
+        <input type="submit" value="Post Comment" />
+      </form>
+
+      <div class="existing-comments">
+        <?php
+          $file = '../../comments/low-salt-biga-neapolitan.txt';
+          if (file_exists($file)) {
+            echo nl2br(htmlspecialchars(file_get_contents($file)));
+          }
+        ?>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Wolfgang's Cookbook</p>
+</footer>
+</body>
+</html>

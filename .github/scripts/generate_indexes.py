@@ -15,12 +15,18 @@ def generate_recipe_card(recipe_path, images_path):
         </a>'''
 
 def generate_category_section(category, emoji):
+    active_class = {
+        'pizza': ' class="active"' if category == 'pizza' else '',
+        'eats': ' class="active"' if category == 'eats' else '',
+        'treats': ' class="active"' if category == 'treats' else ''
+    }
+    
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{category.title()} Recipes | Wolfgang's Cookbook</title>
+  <title>{category.title()} | Wolfgang's Cookbook</title>
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -35,23 +41,25 @@ def generate_category_section(category, emoji):
       <ul>
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../index.html">Recipe Index</a></li>
-        <li><a href="../pizza/index.html">Pizza</a></li>
-        <li><a href="../eats/index.html" class="active">Eats</a></li>
-        <li><a href="../treats/index.html">Treats</a></li>
+        <li><a href="../pizza/index.html"{active_class['pizza']}>Pizza</a></li>
+        <li><a href="../eats/index.html"{active_class['eats']}>Eats</a></li>
+        <li><a href="../treats/index.html"{active_class['treats']}>Treats</a></li>
         <li><a href="../../about.html">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="recipe-header">
-    <h1>{category.title()} Recipes</h1>
-    <p class="subtitle">{get_category_subtitle(category)}</p>
-  </section>
-
   <main>
-    <div class="recipe-grid">
-      {generate_category_cards(category)}
-    </div>
+    <section class="recipe-header">
+      <h1>{category.title()} Recipes</h1>
+      <p class="subtitle">{get_category_subtitle(category)}</p>
+    </section>
+
+    <section class="category-section">
+      <div class="recipe-grid">
+        {generate_category_cards(category)}
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -142,6 +150,14 @@ def generate_homepage():
     
     content = generate_homepage_cards()
     return template.format(content=content)
+
+def get_category_subtitle(category):
+    subtitles = {
+        'pizza': 'Neapolitan-style pizza doughs and sauces',
+        'eats': 'Savory mains, sides, and sauces',
+        'treats': 'Sweet treats and baked goods'
+    }
+    return subtitles.get(category, '')
 
 # Update main execution
 if __name__ == "__main__":
