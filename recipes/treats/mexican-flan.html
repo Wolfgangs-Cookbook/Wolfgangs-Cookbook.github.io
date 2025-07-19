@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mexican Flan</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../pizza/index.html">Pizza</a></li>
+        <li><a href="../eats/index.html">Eats</a></li>
+        <li><a href="../treats/index.html">Treats</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <section class="recipe-header">
+    <h1>Mexican Flan</h1>
+    <p class="subtitle">Silky Smooth Caramel Custard</p>
+  </section>
+
+  <div class="recipe-content">
+    <div class="recipe-text">
+      <article>
+        <h2>Ingredients</h2>
+        <ul>
+          <li>1 cup granulated sugar (for caramel)</li>
+          <li>1 14oz can sweetened condensed milk</li>
+          <li>1 12oz can evaporated milk</li>
+          <li>1 cup whole milk</li>
+          <li>4 large eggs</li>
+          <li>2 egg yolks</li>
+          <li>1 tablespoon vanilla extract</li>
+          <li>¼ teaspoon salt</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+          <li>Preheat oven to 325°F (165°C). Have ready a 9-inch cake pan and a larger baking dish for the water bath.</li>
+          <li>Make the caramel: Heat sugar in a saucepan over medium heat, stirring constantly until it melts and turns golden amber (about 8-10 minutes). Immediately pour into cake pan, swirling to coat bottom.</li>
+          <li>In a large bowl, whisk together condensed milk, evaporated milk, whole milk, eggs, egg yolks, vanilla, and salt until smooth.</li>
+          <li>Strain mixture through a fine-mesh sieve into the caramel-lined pan.</li>
+          <li>Place cake pan in larger baking dish. Fill outer dish with hot water halfway up the sides of the flan pan.</li>
+          <li>Bake for 50-60 minutes until center is just set but still jiggly (like gelatin).</li>
+          <li>Remove from water bath and cool completely on a wire rack.</li>
+          <li>Refrigerate for at least 4 hours or overnight.</li>
+          <li>To serve, run a knife around the edge and invert onto a rimmed serving plate.</li>
+        </ol>
+
+        <h2>Tips</h2>
+        <ul>
+          <li>Watch the caramel closely as it can burn quickly</li>
+          <li>Straining ensures silky smooth texture</li>
+          <li>Don't overbake - flan should be barely set when done</li>
+          <li>Can be made up to 3 days ahead</li>
+        </ul>
+      </article>
+    </div>
+    <img src="../../images/treats/mexican-flan.png" alt="Mexican Flan" class="recipe-photo" />
+  </div>
+
+        <section class="interactions">
+          <form action="../../likes.php" method="POST">
+            <input type="hidden" name="page" value="mexican-flan" />
+            <button type="submit">👍 Like</button>
+          </form>
+
+          <div class="comments">
+            <h3>Leave a Comment</h3>
+            <form action="../../comments.php" method="POST">
+              <input type="hidden" name="page" value="mexican-flan" />
+              <label for="name">Name:</label><br />
+              <input type="text" id="name" name="name" /><br />
+              <label for="comment">Comment:</label><br />
+              <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
+              <input type="submit" value="Post Comment" />
+            </form>
+
+            <div class="existing-comments">
+              <?php
+                $file = '../../comments/mexican-flan.txt';
+                if (file_exists($file)) {
+                  echo nl2br(htmlspecialchars(file_get_contents($file)));
+                }
+              ?>
+            </div>
+          </div>
+        </section>
+      </main>
+
+  <footer>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
+  </footer>
+</body>
+</html>

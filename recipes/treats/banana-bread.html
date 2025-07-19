@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Banana Bread</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../pizza/index.html">Pizza</a></li>
+        <li><a href="../eats/index.html">Eats</a></li>
+        <li><a href="../treats/index.html">Treats</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <section class="recipe-header">
+    <h1>Classic Banana Bread</h1>
+    <p class="subtitle">Moist, Not-Too-Sweet Quick Bread</p>
+  </section>
+
+  <div class="recipe-content">
+    <div class="recipe-text">
+      <article>
+        <h2>Ingredients</h2>
+        <ul>
+          <li>3-4 very ripe bananas, mashed (about 1½ cups)</li>
+          <li>⅓ cup melted butter</li>
+          <li>½ cup plain yogurt</li>
+          <li>2 large eggs</li>
+          <li>⅔ cup brown sugar (packed)</li>
+          <li>1 teaspoon vanilla extract</li>
+          <li>1¾ cups all-purpose flour</li>
+          <li>1 teaspoon baking soda</li>
+          <li>½ teaspoon salt</li>
+          <li>½ teaspoon cinnamon</li>
+          <li>Optional: ½ cup chopped walnuts or pecans</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+          <li>Preheat oven to 350°F (175°C). Grease a 9x5 inch loaf pan.</li>
+          <li>In a large bowl, mix mashed bananas with melted butter and yogurt.</li>
+          <li>Beat in eggs, then stir in brown sugar and vanilla.</li>
+          <li>In a separate bowl, whisk flour, baking soda, salt, and cinnamon.</li>
+          <li>Fold dry ingredients into wet mixture until just combined. Don't overmix.</li>
+          <li>If using nuts, fold them in gently.</li>
+          <li>Pour into prepared pan, smooth top.</li>
+          <li>Bake 55-65 minutes until a toothpick comes out clean.</li>
+          <li>Cool in pan 10 minutes, then remove to wire rack.</li>
+        </ol>
+
+        <h2>Tips</h2>
+        <ul>
+          <li>Use overripe bananas with black spots for best flavor</li>
+          <li>Yogurt can be replaced with sour cream</li>
+          <li>Don't overmix - some small lumps are okay</li>
+          <li>Freezes well for up to 3 months</li>
+        </ul>
+      </article>
+    </div>
+    <img src="../../images/treats/banana-bread.png" alt="Classic Banana Bread" class="recipe-photo" />
+  </div>
+
+        <section class="interactions">
+          <form action="../../likes.php" method="POST">
+            <input type="hidden" name="page" value="banana-bread" />
+            <button type="submit">👍 Like</button>
+          </form>
+
+          <div class="comments">
+            <h3>Leave a Comment</h3>
+            <form action="../../comments.php" method="POST">
+              <input type="hidden" name="page" value="banana-bread" />
+              <label for="name">Name:</label><br />
+              <input type="text" id="name" name="name" /><br />
+              <label for="comment">Comment:</label><br />
+              <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
+              <input type="submit" value="Post Comment" />
+            </form>
+
+            <div class="existing-comments">
+              <?php
+                $file = '../../comments/banana-bread.txt';
+                if (file_exists($file)) {
+                  echo nl2br(htmlspecialchars(file_get_contents($file)));
+                }
+              ?>
+            </div>
+          </div>
+        </section>
+      </main>
+
+  <footer>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
+  </footer>
+</body>
+</html>

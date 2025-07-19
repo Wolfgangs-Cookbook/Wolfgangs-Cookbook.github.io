@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Baking Recipes | Wolfgang’s Cookbook</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Treats - Wolfgang's Cookbook</title>
+  <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
   <header>
-    <h1><a href="/">Wolfgang’s Cookbook</a></h1>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
     <nav>
-      <a href="/">Home</a>
-      <a href="/recipes/">All Recipes</a>
-      <a href="/recipes/pizza/">Pizza</a>
-      <a href="/recipes/baking/">Baking</a>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../pizza/index.html">Pizza</a></li>
+        <li><a href="../eats/index.html">Eats</a></li>
+        <li><a href="../treats/index.html" class="active">Treats</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
+  <section class="recipe-header">
+    <h1>Treats</h1>
+    <p class="subtitle">Sweet treats and baked goods with balanced flavors.</p>
+  </section>
+
   <main>
-    <h2>Baking Recipes</h2>
-
-    <section>
-      <h3>🧠 About This Section</h3>
-      <p>This section focuses on baked goods that are flavorful, approachable, and lower in salt than traditional versions. From cookies to rustic loaves, we aim for balance and satisfaction without relying on sodium for structure or taste.</p>
-    </section>
-
-    <section>
-      <h3>🍪 Cookies</h3>
-      <ul>
-        <li><a href="/recipes/baking/oatmeal-chocolate-chip.html">Oatmeal Chocolate Chip Cookies</a></li>
-        <li><a href="#">Tahini Shortbread</a></li>
-        <li><a href="#">Low-Salt Peanut Butter Cookies</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>🍞 Breads & Other Bakes</h3>
-      <ul>
-        <li><a href="#">Olive Oil Focaccia (reduced salt)</a></li>
-        <li><a href="#">Whole Wheat Sandwich Loaf</a></li>
-        <li><a href="#">Sourdough with Minimal Salt</a></li>
-      </ul>
-    </section>
+    <div class="recipe-grid">
+      <a href="oatmeal-chocolate-chip.html" class="recipe-card">
+        <img src="../../images/treats/oatmeal-cookies.png" alt="Oatmeal Chocolate Chip Cookies">
+        <h2>Oatmeal Chocolate Chip Cookies</h2>
+      </a>
+      <a href="mexican-flan.html" class="recipe-card">
+        <img src="../../images/treats/mexican-flan.png" alt="Mexican Flan">
+        <h2>Mexican Flan</h2>
+      </a>
+      <a href="banana-bread.html" class="recipe-card">
+        <img src="../../images/treats/banana-bread.png" alt="Banana Bread">
+        <h2>Banana Bread</h2>
+      </a>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Wolfgang’s Cookbook. Baked from scratch with balance and care.</p>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
   </footer>
 </body>
 </html>
