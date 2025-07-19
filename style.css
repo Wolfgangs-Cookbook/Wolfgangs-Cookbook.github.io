@@ -8,10 +8,17 @@ body {
 }
 
 header {
-  background: #fff;          /* crisp white header background */
+  background: #FCF4E5; /* matches logo background */
   padding: 1.2em 1em;
   text-align: center;
   border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  width: 500px; /* adjust to scale the large image */
+  margin-bottom: 0.3em;
 }
 
 header h1 {
@@ -60,6 +67,25 @@ main {
 
 .featured-recipes li {
   margin-bottom: 0.5em;
+}
+
+.recipe-header {
+  text-align: center;
+  padding: 2em 1em 1em;
+  background-color: #fff;
+}
+
+.recipe-header h1 {
+  font-size: 2.2em;
+  font-weight: 500;
+  margin: 0.2em 0 0.2em;
+  color: #333;
+}
+
+.recipe-header .subtitle {
+  font-size: 1.2em;
+  color: #777;
+  margin: 0;
 }
 
 footer {
