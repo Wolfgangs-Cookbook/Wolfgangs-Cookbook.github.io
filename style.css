@@ -87,9 +87,7 @@ main {
 .recipe-header .subtitle {
   font-size: 1.2em;
   color: #777;
-  /* margin: 0;
-  margin-top: -0.5em;
-  margin-bottom: 1em;
+  margin: 0.3em 0 0.5em;
 }
 
 /* Wrapper that separates recipe content from photo, so they can be aligned side-by-side
@@ -98,7 +96,6 @@ main {
   display: flex;
   gap: 2em;
   align-items: flex-start;
-  gap: 2em auto;
   max-width: 1000px;
   padding: 0 1em;
 }
