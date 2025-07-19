@@ -142,6 +142,17 @@ nav a:focus {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.about-section, .about-chef {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+.about-chef h2 {
+  margin-top: 3rem;
+}
+
 /* Footer */
 footer {
   text-align: center;
