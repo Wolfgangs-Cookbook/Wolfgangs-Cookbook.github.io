@@ -1,42 +1,61 @@
 body {
-  font-family: Georgia, serif;
+  font-family: "Times New Roman", serif;
   margin: 0;
   padding: 0;
-  background: #fdfdf9;
-  color: #333;
-  line-height: 1.6;
+  background: #fafafa;       /* lighter, neutral grey-white */
+  color: #444;               /* medium grey text for softer contrast */
+  line-height: 1.75;         /* slightly more airy line spacing */
 }
 
 header {
-  background: #fff8f0;
-  padding: 1em;
+  background: #fff;          /* crisp white header background */
+  padding: 1.2em 1em;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
+header h1 {
+  margin-bottom: 0.15em;     /* less space below the main title */
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #222;
+}
+
 .tagline {
+  margin-top: 0;
   font-style: italic;
   color: #777;
+  font-size: 1.1rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 1em 0;
+  margin: 1.3em 0 0 0;       /* some space above menu */
   display: flex;
   justify-content: center;
-  gap: 1.5em;
+  gap: 2.5em;                /* wider spacing between nav links */
 }
 
 nav a {
   text-decoration: none;
-  color: #444;
+  color: #555;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
 }
 
+nav a:hover,
+nav a:focus {
+  color: #000;
+  outline: none;
+}
+
+/* Optional: make main content max width for readability */
 main {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 0 1em;
+  max-width: 900px;
+  margin: 2.5em auto;
+  padding: 0 1.2em;
 }
 
 .featured-recipes li {
