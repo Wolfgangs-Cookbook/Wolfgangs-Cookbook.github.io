@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pizza Recipes | Wolfgang’s Cookbook</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pizza - Wolfgang's Cookbook</title>
+  <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
   <header>
-    <h1><a href="/">Wolfgang’s Cookbook</a></h1>
+    <div class="hero">
+      <a href="../../index.html">
+        <img src="../../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
     <nav>
-      <a href="/">Home</a>
-      <a href="/recipes/">All Recipes</a>
-      <a href="/recipes/pizza/">Pizza</a>
-      <a href="/recipes/baking/">Baking</a>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Recipe Index</a></li>
+        <li><a href="../pizza/index.html" class="active">Pizza</a></li>
+        <li><a href="../eats/index.html">Eats</a></li>
+        <li><a href="../treats/index.html">Treats</a></li>
+        <li><a href="../../about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
+  <section class="recipe-header">
+    <h1>Pizza</h1>
+    <p class="subtitle">Low-sodium doughs and classic toppings.</p>
+  </section>
+
   <main>
-    <h2>Pizza Recipes</h2>
-
-    <section>
-      <h3>🧠 Overview</h3>
-      <p>Pizza doughs vary widely, but they all begin with the same ingredients: flour, water, yeast, and salt. In this cookbook, we focus on <strong>low-sodium</strong> doughs, which need careful handling to maintain flavor and structure. Low salt often means using less yeast, allowing for longer fermentations that build complexity and digestibility.</p>
-
-      <p>We’ll explore:</p>
-      <ul>
-        <li><strong>Bulk Fermentation:</strong> A single-stage, longer fermentation that requires less handling and develops great depth over time.</li>
-        <li><strong>Biga:</strong> A firm Italian preferment that gives lightness and complexity.</li>
-        <li><strong>Poolish:</strong> A wetter, more active pre-ferment that enhances extensibility and browning.</li>
-        <li><strong>Flour choices:</strong> We favor high-protein bread flours or tipo 00 for strength and chew.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>🍕 Dough Recipes</h3>
-      <ul>
-        <li><a href="/recipes/pizza/neapolitan-dough.html">Neapolitan Dough (24–48hr bulk ferment)</a></li>
-        <li><a href="#">72hr Biga Dough</a></li>
-        <li><a href="#">Poolish-Based Thin Crust</a></li>
-        <li><a href="#">Quick 6-Hour Same-Day Dough</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>🍅 Sauce Recipes</h3>
-      <ul>
-        <li><a href="#">No-Cook San Marzano Sauce</a></li>
-        <li><a href="#">Slow-Roasted Garlic Tomato Sauce</a></li>
-      </ul>
-    </section>
+    <div class="recipe-grid">
+      <a href="neapolitan-dough.html" class="recipe-card">
+        <img src="../../images/pizza/neapolitan-dough.png" alt="Neapolitan Dough">
+        <h2>Neapolitan Dough (24–48hr)</h2>
+      </a>
+      <a href="#" class="recipe-card">
+        <img src="../../images/pizza/biga-dough.png" alt="72hr Biga Dough">
+        <h2>72hr Biga Dough</h2>
+      </a>
+      <a href="#" class="recipe-card">
+        <img src="../../images/pizza/poolish-dough.png" alt="Poolish-Based Thin Crust">
+        <h2>Poolish-Based Thin Crust</h2>
+      </a>
+      <a href="#" class="recipe-card">
+        <img src="../../images/pizza/quick-dough.png" alt="Quick 6-Hour Same-Day Dough">
+        <h2>Quick 6-Hour Same-Day Dough</h2>
+      </a>
+      <a href="#" class="recipe-card">
+        <img src="../../images/pizza/san-marzano-sauce.png" alt="No-Cook San Marzano Sauce">
+        <h2>No-Cook San Marzano Sauce</h2>
+      </a>
+      <a href="#" class="recipe-card">
+        <img src="../../images/pizza/roasted-sauce.png" alt="Slow-Roasted Garlic Tomato Sauce">
+        <h2>Slow-Roasted Garlic Sauce</h2>
+      </a>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Wolfgang’s Cookbook. Crafted with care and minimal sodium.</p>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
   </footer>
 </body>
 </html>
