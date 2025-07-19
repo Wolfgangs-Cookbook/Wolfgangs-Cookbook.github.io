@@ -1,9 +1,8 @@
 name: Generate Recipe Indexes
 on:
   push:
-    paths:
-      - 'recipes/**/*.html'
-      - 'images/**/*.png'
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -42,6 +41,3 @@ jobs:
           git add recipes/*/index.html index.html
           git commit -m "Auto-generate recipe indexes and homepage" || exit 0
           git push
-
-      - name: Wait for Pages Build
-        run: sleep 30
