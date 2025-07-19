@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: "Times New Roman", serif;
   margin: 0;
@@ -7,6 +8,14 @@ body {
   line-height: 1.75;         /* slightly more airy line spacing */
 }
 
+/* Layout */
+main {
+  max-width: 900px;
+  margin: 2.5em auto;
+  padding: 0 1.2em;
+}
+
+/* Header & Navigation */
 header {
   background: #FCF4E5; /* matches logo background */
   padding: 1.2em 1em;
@@ -19,13 +28,6 @@ header {
   height: auto;
   width: 500px; /* adjust to scale the large image */
   margin-bottom: 0.3em;
-}
-
-header h1 {
-  margin-bottom: 0.15em;     /* less space below the main title */
-  font-weight: 700;
-  font-size: 2.8rem;
-  color: #222;
 }
 
 .tagline {
@@ -58,24 +60,53 @@ nav a:focus {
   outline: none;
 }
 
-/* Optional: make main content max width for readability */
-main {
-  max-width: 900px;
-  margin: 2.5em auto;
-  padding: 0 1.2em;
+/* Featured Recipes Grid */
+.featured-recipes {
+  padding: 2em;
+  background-color: #f7f7f7;
+    margin-bottom: 3em; /* 👈 this adds space before the footer, increase for more space */
 }
 
-.featured-recipes li {
-  margin-bottom: 0.5em;
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
+/* Recipe Cards */
+.recipe-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recipe-card h3 {
+  margin: 0.5em 0 1em;
+  font-size: 1.1em;
+}
+
+/* Recipe Page Layout */
 .recipe-header {
   text-align: center;
   padding: 2em 1em 1em;
   background-color: #fff;
 }
 
-/* Recipe Title Format */
 .recipe-header h1 {
   font-size: 2.2em;
   font-weight: 500;
@@ -83,15 +114,12 @@ main {
   color: #333;
 }
 
-/* Recipe Subtitle Format */
 .recipe-header .subtitle {
   font-size: 1.2em;
   color: #777;
   margin: 0.3em 0 0.5em;
 }
 
-/* Wrapper that separates recipe content from photo, so they can be aligned side-by-side */
-/* Recipe Content Format */
 .recipe-content {
   display: flex;
   gap: 2em;
@@ -104,7 +132,6 @@ main {
   flex: 1;
 }
 
-/* Recipe Photo Format */
 .recipe-photo {
   flex-shrink: 0;
   width: 250px;
@@ -114,7 +141,7 @@ main {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-
+/* Footer */
 footer {
   text-align: center;
   padding: 1em;
