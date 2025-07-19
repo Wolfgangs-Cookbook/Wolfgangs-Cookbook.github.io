@@ -16,7 +16,11 @@ def generate_recipe_card(recipe_path, images_path):
 
 def generate_category_section(category, emoji):
     recipes_path = f"recipes/{category}"
+    # Add print statement for debugging
+    print(f"Scanning directory: {recipes_path}")
     recipes = glob.glob(f"{recipes_path}/*.html")
+    # Print found recipes
+    print(f"Found recipes: {recipes}")
     recipes = [r for r in recipes if 'index.html' not in r]
     
     cards = [generate_recipe_card(recipe, category) for recipe in recipes]
