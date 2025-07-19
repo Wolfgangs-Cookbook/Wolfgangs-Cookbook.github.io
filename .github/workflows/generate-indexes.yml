@@ -5,11 +5,16 @@ on:
       - 'recipes/**/*.html'
       - 'images/**/*.png'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -21,8 +26,8 @@ jobs:
         
       - name: Commit changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add recipes/*/index.html recipes/index.html
           git commit -m "Auto-generate recipe indexes" || exit 0
           git push
