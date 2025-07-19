@@ -98,12 +98,10 @@ def generate_homepage_cards():
         filename = Path(recipe).stem
         title = filename.replace('-', ' ').title()
         cards.append(f'''
-        <article class="recipe-card">
-          <a href="recipes/{category}/{filename}.html">
-            <img src="images/{category}/{filename}.png" alt="{title}" class="recipe-photo" />
-            <h3>{title}</h3>
-          </a>
-        </article>''')
+        <a href="recipes/{category}/{filename}.html" class="recipe-card">
+          <img src="images/{category}/{filename}.png" alt="{title}">
+          <h2>{title}</h2>
+        </a>''')
     
     return '\n'.join(cards)
 
