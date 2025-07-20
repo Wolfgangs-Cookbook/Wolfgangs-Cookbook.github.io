@@ -84,7 +84,22 @@ def generate_homepage_cards():
         print(f"Found {len(recipe_files)} files in {category}/")
         recipes.extend([f for f in recipe_files if 'index.html' not in f])
     
-    recipes.sort(key=lambda x: os.path.getmtime(x), reverse=True)
+    # Sort by Git commit date (when the file was last modified in Git)
+    def get_git_date(file_path):
+        try:
+            import subprocess
+            result = subprocess.run(['git', 'log', '-1', '--format=%ct', '--', file_path], 
+                                  capture_output=True, text=True, cwd=os.getcwd())
+            if result.returncode == 0 and result.stdout.strip():
+                return int(result.stdout.strip())
+            else:
+                # Fallback to file modification time if Git fails
+                return os.path.getmtime(file_path)
+        except:
+            # Fallback to file modification time if Git is not available
+            return os.path.getmtime(file_path)
+    
+    recipes.sort(key=get_git_date, reverse=True)
     recent_recipes = recipes[:9]
     
     cards = []
