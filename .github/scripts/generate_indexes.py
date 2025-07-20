@@ -28,7 +28,7 @@ def generate_category_section(category, emoji):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{category.title()} | Wolfgang's Cookbook</title>
   <link rel="stylesheet" href="../../style.css" />
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
 </head>
 <body>
   <header>
@@ -160,6 +160,88 @@ def get_category_subtitle(category):
     }
     return subtitles.get(category, '')
 
+def generate_main_recipe_index():
+    """Generate the main recipes/index.html file that shows all recipes organized by category"""
+    template = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Recipes | Wolfgang's Cookbook</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a href="../index.html">
+        <img src="../logo.png" alt="Wolfgang's Cookbook Logo" class="logo">
+      </a>
+      <p class="tagline">Health-considerate, high-flavor recipes made from scratch.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" class="active">Recipe Index</a></li>
+        <li><a href="pizza/index.html">Pizza</a></li>
+        <li><a href="eats/index.html">Eats</a></li>
+        <li><a href="treats/index.html">Treats</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="recipe-header">
+    <h1>All Recipes</h1>
+    <p class="subtitle">Browse our complete collection.</p>
+  </section>
+
+  <main>
+    {content}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wolfgang's Cookbook</p>
+  </footer>
+</body>
+</html>'''
+    
+    categories = [
+        ('pizza', '🍕'),
+        ('eats', '🍲'), 
+        ('treats', '🍪')
+    ]
+    
+    category_sections = []
+    for category, emoji in categories:
+        recipes = glob.glob(f"recipes/{category}/*.html")
+        recipes = [r for r in recipes if 'index.html' not in r]
+        recipes.sort()  # Sort alphabetically
+        
+        if recipes:
+            cards = []
+            for recipe in recipes:
+                filename = Path(recipe).stem
+                title = filename.replace('-', ' ').title()
+                relative_path = f"{category}/{os.path.basename(recipe)}"
+                image_path = f"../images/{category}/{filename}.png"
+                
+                cards.append(f'''
+        <a href="{relative_path}" class="recipe-card">
+          <img src="{image_path}" alt="{title}">
+          <h3>{title}</h3>
+        </a>''')
+            
+            category_sections.append(f'''
+    <section class="category">
+      <h2>{emoji} {category.title()}</h2>
+      <div class="recipe-grid">
+        {''.join(cards)}
+      </div>
+    </section>''')
+    
+    return template.format(content=''.join(category_sections))
+
 # Update main execution
 if __name__ == "__main__":
     # Generate category pages
@@ -167,6 +249,11 @@ if __name__ == "__main__":
         content = generate_category_section(category, emoji)
         with open(f'recipes/{category}/index.html', 'w') as f:
             f.write(content)
+    
+    # Generate main recipe index
+    main_index_content = generate_main_recipe_index()
+    with open('recipes/index.html', 'w') as f:
+        f.write(main_index_content)
     
     # Generate homepage
     with open('index.html', 'w') as f:
