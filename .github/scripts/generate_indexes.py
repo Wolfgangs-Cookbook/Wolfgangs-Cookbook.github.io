@@ -244,17 +244,24 @@ def generate_main_recipe_index():
 
 # Update main execution
 if __name__ == "__main__":
+    print("Starting index generation...")
+    
     # Generate category pages
     for category, emoji in {'pizza': '🍕', 'eats': '🍲', 'treats': '🍪'}.items():
+        print(f"Generating {category} index...")
         content = generate_category_section(category, emoji)
         with open(f'recipes/{category}/index.html', 'w') as f:
             f.write(content)
     
     # Generate main recipe index
+    print("Generating main recipe index...")
     main_index_content = generate_main_recipe_index()
     with open('recipes/index.html', 'w') as f:
         f.write(main_index_content)
     
     # Generate homepage
+    print("Generating homepage...")
     with open('index.html', 'w') as f:
         f.write(generate_homepage())
+    
+    print("Index generation complete!")
