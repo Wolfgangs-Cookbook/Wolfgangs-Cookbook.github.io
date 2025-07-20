@@ -31,7 +31,7 @@
   <section class="recipe-header">
     <h1>Low-Salt Neapolitan Dough</h1>
     <p class="subtitle">12–72hr Refrigerated Bulk-Ferment</p>
-    <p class="subtitle">Note that this recipe is unfinished and needs to be updated</p>
+    <p class="subtitle">Note that this recipe is still being tested and will be updated on an ongoing basis.</p>
   </section>
 
   <div class="recipe-content">
@@ -39,60 +39,42 @@
       <article>
         <h2>Ingredients</h2>
         <ul>
-          <li>500g 00 flour (or bread flour)</li>
+          <li>500g 00 flour (or bread flour), recommended: Caputo Pizzeria 50% and Caputo Chef's 50%</li>
           <li>325g water (65%)</li>
-          <li>2g instant yeast</li>
-          <li>7g salt</li>
+          <li>0.35g instant yeast</li>
+          <li>4g salt</li>
         </ul>
 
         <h2>Instructions</h2>
         <ol>
-          <li>Mix all ingredients in a bowl. Let rest 20 minutes (autolyse).</li>
-          <li>Knead gently for 5–8 minutes until smooth. Cover and let rise at room temp for 2–3 hours.</li>
-          <li>Divide into 2–4 dough balls. Place in lightly oiled containers.</li>
-          <li>Cold ferment in the fridge for 24–48 hours.</li>
-          <li>Let dough warm to room temp for 1–2 hours before stretching.</li>
-          <li>Bake at 500–550°F on a pizza steel or stone until bubbly and charred (6–8 minutes).</li>
+          <li>Mix yeast into water. Add flour 20% at a time, mixing well after each addition. 
+          <li>Once 80% of flour is added and mixed, add half of the remaining flour and salt and mix.</li>
+          <li>Spread remaining 10% of flour onto counter, remove dough from bowl, and kneed it on the floured counter.</li>
+          <li>Kneed well for 5 minutes and ensure all flour from counter is mixed in, or until dough is 23c or 73f.</li>
+          <li>Let rest for 2 hours, folding every 60 minutes.</li>
+          <li>After second set of folding (at 2hrs), divide into 3-4 dough balls, put into covered container (oiled or floured as preferred), and let rise at room temp for 2–4 hours.</li>
+          <li>Cold ferment in the fridge for 12–72 hours.</li>
+          </li>
+          <li>Let dough warm to room temp for 2-4 hours before stretching.</li>
+          <li>Bake at 800-1000°F in a pizza oven for 1-2 minutes, or in an oven at the highest temperature (450-600°F) on a pizza steel or stone until bubbly and charred (5–8 minutes).</li>
+          <li>If baking in a home oven, wait 30-40 minutes after preheating to let oven heat evenly before baking pizza. Try to only open oven momentarily to reduce heat loss.</li>
+          <li>Let cool for 1-2 minutes before serving.</li>
         </ol>
 
         <h2>Tips</h2>
         <ul>
           <li>Use the dough within 72 hours max.</li>
           <li>For more tang, extend the cold ferment to 72 hours (reduce yeast slightly).</li>
+          <li>If using a home oven, recommend using a pizza steel (preferable) or stone to help with even heating.</li>
+          <li>If using a home oven, try turning on the broiler on high for the last 30-90 seconds to help with charring.</li>
+          <li>If preparing pizza on a pizza peel, ensure the peel is well sprinkled with semolina flour (preferable), cornmeal, or flour to prevent sticking and ensure a good launch.</li>
+          <li>Ensure dough is only left on peel for 1-2 minutes before baking, as it will start to stick to the peel.</li>
         </ul>
       </article>
     </div>
     <img src="../../images/pizza/neapolitan-dough.png" alt="Neapolitan Dough" class="recipe-photo" />
   </div>
-
-        <section class="interactions">
-          <form action="../../likes.php" method="POST">
-            <input type="hidden" name="page" value="neapolitan-dough" />
-            <button type="submit">👍 Like</button>
-          </form>
-
-          <div class="comments">
-            <h3>Leave a Comment</h3>
-            <form action="../../comments.php" method="POST">
-              <input type="hidden" name="page" value="neapolitan-dough" />
-              <label for="name">Name:</label><br />
-              <input type="text" id="name" name="name" /><br />
-              <label for="comment">Comment:</label><br />
-              <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
-              <input type="submit" value="Post Comment" />
-            </form>
-
-            <div class="existing-comments">
-              <?php
-                $file = '../../comments/neapolitan-dough.txt';
-                if (file_exists($file)) {
-                  echo nl2br(htmlspecialchars(file_get_contents($file)));
-                }
-              ?>
-            </div>
-          </div>
-        </section>
-      </main>
+</main>
 
   <footer>
     <p>&copy; 2025 Wolfgang's Cookbook</p>
