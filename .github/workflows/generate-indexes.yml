@@ -9,8 +9,8 @@ permissions:
   pages: write
 
 concurrency: 
-  group: "pages"
-  cancel-in-progress: false
+  group: "pages-build"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -33,11 +33,18 @@ jobs:
           python -u .github/scripts/generate_indexes.py
           echo "Generated HTML content:"
           cat index.html
+          
+      - name: Wait for any previous builds
+        run: sleep 10
         
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add recipes/*/index.html index.html
-          git commit -m "Auto-generate recipe indexes and homepage" || exit 0
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-generate recipe indexes and homepage"
+            git push
+          fi
