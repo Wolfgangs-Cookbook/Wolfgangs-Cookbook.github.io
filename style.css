@@ -133,6 +133,14 @@ nav a:focus {
   flex: 1;
 }
 
+.recipe-text h2 {
+  margin: 0 0 0.2em 0;  /* Reduced bottom margin by 80% */
+}
+
+.recipe-text p {
+  margin: 0 0 1em 0;  /* Reduced top margin, normal bottom margin */
+}
+
 .recipe-photo {
   flex-shrink: 0;
   width: 250px;
