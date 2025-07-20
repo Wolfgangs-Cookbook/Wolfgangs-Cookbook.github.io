@@ -27,7 +27,7 @@ header {
   max-width: 100%;
   height: auto;
   width: 500px; /* adjust to scale the large image */
-  margin-bottom: 0.3em;
+  margin-bottom: 0.15em;
 }
 
 .tagline {
@@ -40,7 +40,7 @@ header {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 1.3em 0 0 0;       /* some space above menu */
+  margin: 0.585em 0 0 0;       /* some space above menu */
   display: flex;
   justify-content: center;
   gap: 2.5em;                /* wider spacing between nav links */
