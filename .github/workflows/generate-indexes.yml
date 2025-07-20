@@ -34,8 +34,7 @@ jobs:
       - name: Generate Indexes
         run: |
           python -u .github/scripts/generate_indexes.py
-          echo "Generated HTML content:"
-          cat index.html
+          echo "Index generation completed successfully"
           
       - name: Wait for any previous builds
         run: sleep 10
