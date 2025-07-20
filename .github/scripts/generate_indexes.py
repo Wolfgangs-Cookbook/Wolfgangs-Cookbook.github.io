@@ -207,9 +207,9 @@ def generate_main_recipe_index():
 </html>'''
     
     categories = [
-        ('pizza', '🍕'),
-        ('eats', '🍲'), 
-        ('treats', '🍪')
+        ('pizza', ''),
+        ('eats', ''), 
+        ('treats', '')
     ]
     
     category_sections = []
@@ -234,7 +234,7 @@ def generate_main_recipe_index():
             
             category_sections.append(f'''
     <section class="category">
-      <h2>{emoji} {category.title()}</h2>
+      <h2><strong>{category.title()}</strong></h2>
       <div class="recipe-grid">
         {''.join(cards)}
       </div>
@@ -247,21 +247,21 @@ if __name__ == "__main__":
     print("Starting index generation...")
     
     # Generate category pages
-    for category, emoji in {'pizza': '🍕', 'eats': '🍲', 'treats': '🍪'}.items():
+    for category in ['pizza', 'eats', 'treats']:
         print(f"Generating {category} index...")
-        content = generate_category_section(category, emoji)
-        with open(f'recipes/{category}/index.html', 'w') as f:
+        content = generate_category_section(category, '')
+        with open(f'recipes/{category}/index.html', 'w', encoding='utf-8') as f:
             f.write(content)
     
     # Generate main recipe index
     print("Generating main recipe index...")
     main_index_content = generate_main_recipe_index()
-    with open('recipes/index.html', 'w') as f:
+    with open('recipes/index.html', 'w', encoding='utf-8') as f:
         f.write(main_index_content)
     
     # Generate homepage
     print("Generating homepage...")
-    with open('index.html', 'w') as f:
+    with open('index.html', 'w', encoding='utf-8') as f:
         f.write(generate_homepage())
     
     print("Index generation complete!")
