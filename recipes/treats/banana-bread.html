@@ -38,36 +38,38 @@
       <article>
         <h2>Ingredients</h2>
         <ul>
-          <li>3-4 very ripe bananas, mashed (about 1½ cups)</li>
-          <li>⅓ cup melted butter</li>
-          <li>½ cup plain yogurt</li>
+          <li>3-4 very ripe bananas</li>
+          <li>3/4 cup softened butter</li>
           <li>2 large eggs</li>
           <li>⅔ cup brown sugar (packed)</li>
-          <li>1 teaspoon vanilla extract</li>
-          <li>1¾ cups all-purpose flour</li>
+          <li>1.5 teaspoon vanilla extract</li>
+          <li>1.5 cups all-purpose flour</li>
           <li>1 teaspoon baking soda</li>
           <li>½ teaspoon salt</li>
-          <li>½ teaspoon cinnamon</li>
+          <li>Optional: ½ teaspoon cinnamon</li>
           <li>Optional: ½ cup chopped walnuts or pecans</li>
+          <li>Optional: ½ cup chocolate chips</li>
+          <li>Optional: 1/2 cup yogurt orsour cream</li>
         </ul>
 
         <h2>Instructions</h2>
         <ol>
           <li>Preheat oven to 350°F (175°C). Grease a 9x5 inch loaf pan.</li>
-          <li>In a large bowl, mix mashed bananas with melted butter and yogurt.</li>
-          <li>Beat in eggs, then stir in brown sugar and vanilla.</li>
+          <li>In a large bowl, whisk softened butter and brown sugar until creamy.</li>
+          <li>Beat in eggs and vanilla.</li>
           <li>In a separate bowl, whisk flour, baking soda, salt, and cinnamon.</li>
+          <li>If using yogurt or sour cream, mix it in with the wet ingredients.</li>
           <li>Fold dry ingredients into wet mixture until just combined. Don't overmix.</li>
-          <li>If using nuts, fold them in gently.</li>
-          <li>Pour into prepared pan, smooth top.</li>
-          <li>Bake 55-65 minutes until a toothpick comes out clean.</li>
+          <li>If using nuts or chocolate chips, fold them in gently.</li>
+          <li>Lightly mash / fold bananas into batter.</li>
+          <li>Pour into prepared pan, smooth top, indenting the middle to prevent it from rising too high.</li>
+          <li>Bake 50-60 minutes until a toothpick comes out clean.</li>
           <li>Cool in pan 10 minutes, then remove to wire rack.</li>
         </ol>
 
         <h2>Tips</h2>
         <ul>
           <li>Use overripe bananas with black spots for best flavor</li>
-          <li>Yogurt can be replaced with sour cream</li>
           <li>Don't overmix - some small lumps are okay</li>
           <li>Freezes well for up to 3 months</li>
         </ul>
@@ -75,35 +77,7 @@
     </div>
     <img src="../../images/treats/banana-bread.png" alt="Classic Banana Bread" class="recipe-photo" />
   </div>
-
-        <section class="interactions">
-          <form action="../../likes.php" method="POST">
-            <input type="hidden" name="page" value="banana-bread" />
-            <button type="submit">👍 Like</button>
-          </form>
-
-          <div class="comments">
-            <h3>Leave a Comment</h3>
-            <form action="../../comments.php" method="POST">
-              <input type="hidden" name="page" value="banana-bread" />
-              <label for="name">Name:</label><br />
-              <input type="text" id="name" name="name" /><br />
-              <label for="comment">Comment:</label><br />
-              <textarea id="comment" name="comment" rows="4" cols="40"></textarea><br />
-              <input type="submit" value="Post Comment" />
-            </form>
-
-            <div class="existing-comments">
-              <?php
-                $file = '../../comments/banana-bread.txt';
-                if (file_exists($file)) {
-                  echo nl2br(htmlspecialchars(file_get_contents($file)));
-                }
-              ?>
-            </div>
-          </div>
-        </section>
-      </main>
+</main>
 
   <footer>
     <p>&copy; 2025 Wolfgang's Cookbook</p>
